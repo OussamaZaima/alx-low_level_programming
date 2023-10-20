@@ -1,5 +1,4 @@
 #include "lists.h"
-
 /**
  * _strlen - returns the length of a string
  * @s: the string whose length to check
@@ -16,7 +15,6 @@ int _strlen(char *s)
 		i++;
 	return (i);
 }
-
 /**
  * print_list - Prints a linked lists
  * @h: pointer to the first node
