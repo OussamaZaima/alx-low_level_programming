@@ -19,7 +19,7 @@ int _strlen(char *s)
 
 /**
  * print_list - Prints a linked lists
- * @h: pointer to teh first node
+ * @h: pointer to the first node
  *
  * Return: size of list
  */
