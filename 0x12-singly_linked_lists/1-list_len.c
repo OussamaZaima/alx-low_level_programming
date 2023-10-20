@@ -3,7 +3,7 @@
 #include "lists.h"
 
 /**
- * list_les - Show the number of elements of a list
+ * list_len - Show the number of elements of a list
  * @h: A linked list
  *
  * Return: The number of elements of a list
