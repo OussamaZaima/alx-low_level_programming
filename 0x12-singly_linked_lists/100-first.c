@@ -1,13 +1,13 @@
 #include <stdio.h>
+#include <stdnoreturn.h>
+
+void _constructor(void) __attribute__ ((constructor));
 
 /**
- * main - check the code
- *
- * Return: Always 0.
+ * _constructor - executes before main()
  */
-int main(void)
+void _constructor(void)
 {
     printf("(You're beat! and yet, you must allow,\n"
-		    "I bore my house upon my back!\n");
-    return (0);
+                    "I bore my house upon my back!\n");
 }
