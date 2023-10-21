@@ -1,11 +1,13 @@
 #include "lists.h"
+#include <stdlib.h>
+#include <string.h>
 
 /**
  * add_node_end - adds a node to the end of the the list
  * @head: adress of pointer to head node
- * @str: str field of node
+ * @str: string field of node
  *
- * Return: size of list
+ * Return: pointer to the new node
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
@@ -13,6 +15,8 @@ list_t *add_node_end(list_t **head, const char *str)
 	list_t *node = *head;
 
 	if (!head || !new_node)
+	{
+		free(new_node);
 		return (NULL);
 	if (str)
 	{
@@ -24,6 +28,14 @@ list_t *add_node_end(list_t **head, const char *str)
 		}
 		new_node->len = _strlen(new_node->str);
 	}
+	else
+	{
+		new_node->str = NULL;
+		new_node->len = 0;
+	}
+
+	new_node->next = NULL;
+
 	if (node)
 	{
 		while (node->next)
@@ -31,6 +43,8 @@ list_t *add_node_end(list_t **head, const char *str)
 		node->next = new_node
 	}
 	else
+	{
 		*head = new_node;
+	}
 	return (new_node);
 }
