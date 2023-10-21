@@ -1,12 +1,11 @@
 #include <stdio.h>
 
+void _constructor(void) __attribute__ ((constructor));
+
 /**
- * main - check the code
- *
- * Return: Always 0.
+ * _constructor - executes before main()
  */
-int main(void)
+void _constructor(void)
 {
-    printf("(A tortoise, having pretty good sense of a hare's nature, challenges one to a race.)\n");
-    return (0);
+    printf("(A tortoise, having a pretty good sense of a hare's nature, challenges one to a race.)\n");
 }
