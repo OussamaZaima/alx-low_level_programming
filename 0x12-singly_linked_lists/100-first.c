@@ -1,11 +1,10 @@
 #include <stdio.h>
+#include <stdnoreturn.h>
 
 void _constructor(void) __attribute__ ((constructor));
 
 /**
  * _constructor - executes before main()
- *
- * Return: void
  */
 void _constructor(void)
 {
