@@ -14,5 +14,6 @@ int get_bit(unsigned long int n, unsigned int index)
 		return -1;
 	}
 
-	return (n >> index) & 1;
+	unsigned long int mask = 1UL << index;
+	return (n & mask) >> index;
 }
