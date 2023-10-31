@@ -1,7 +1,4 @@
 #include "main.h"
-#include <fcntl.h>
-#include <unistd.h>
-#include <stdlib.h>
 
 /**
  * read_textfile - reads a text file and prints the letters.
@@ -12,28 +9,38 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
+	char *buffer = NULL;
+	ssize_t b_read;
+	ssize_t b_written;
 	int fd;
-	ssize_t nrd, nwr;
-	char *buf;
 
-	if (!filename)
+	if (!(filename && letters))
 		return (0);
 
 	fd = open(filename, O_RDONLY);
-
 	if (fd == -1)
 		return (0);
 
-	buf = malloc(sizeof(char) * (letters));
-	if (!buf)
+	buffer = malloc(sizeof(char) * letters);
+	if (!buffer)
 		return (0);
 
-	nrd = read(fd, buf, letters);
-	nwr = write(STDOUT_FILENO, buf, nrd);
-
+	b_read = read(fd, buffer, letters);
 	close(fd);
 
-	free(buf);
+	if (b_read < 0)
+	{
+		free(buffer);
+		return (0);
+	}
+	if (!b_read)
+		b_read = letters;
 
-	return (nwr);
+	b_written = write(STDOUT_FILENO, buffer, b_read);
+	free(buffer);
+
+	if (b_written < 0)
+		return (0);
+
+	return (b_written);
 }
