@@ -10,9 +10,9 @@
 int main(int argc, char *argv[])
 {
 	int fd1, fd11, readd, writte, file_closed, file2closed;
-	char *buf[1024];
+	char buf[1024];
 
-	if (arg != 3)
+	if (argc != 3)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
 	fd1 = open(argv[1], O_RDONLY, 0);
 	if (fd1 == -1)
@@ -39,6 +39,6 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd1), exit(100);
 	file2_closed = close(fd11);
 	if (file2_closed != 0)
-		dprintf(STDERR_FILENO, "Error: Cant't close fd %d\n", fd11), exit(100);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd11), exit(100);
 	return (0);
 }
