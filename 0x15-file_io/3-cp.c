@@ -10,6 +10,7 @@
 int main(int argc, char *argv[])
 {
 	int fd1, fd11, readd, writte, file_closed, file2closed;
+	ssize_t readd, writte;
 	char buf[1024];
 
 	if (argc != 3)
