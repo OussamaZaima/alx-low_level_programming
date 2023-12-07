@@ -3,19 +3,20 @@
 
 /**
  * print_dlistint - Print all the value data of list
- * @h: head pointer in doubly linked list
- * Return: Number of nodes
+ * @h: adress of head node
+ *
+ * Return: size of list
  */
 size_t print_dlistint(const dlistint_t *h)
 {
-	const dlistint_t *current = h;
-	size_t size;
+	size_t i = 0;
 
-	for (size = 0; current; current = current->next)
+	while (h)
 	{
-		printf("%d\n", current->n);
-		size++;
+		printf("%d\n", h->n);
+		h = h->next
+		i++;
 	}
 
-	return (size);
+	return (i);
 }
