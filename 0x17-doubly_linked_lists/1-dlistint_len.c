@@ -2,7 +2,7 @@
 
 /**
  * dlistint_len - returns length of dlist
- * @h: adress of head node
+ * @h: address of head node
  *
  * Return: size of list
  */

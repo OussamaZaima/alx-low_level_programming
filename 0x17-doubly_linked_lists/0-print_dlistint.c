@@ -3,7 +3,7 @@
 
 /**
  * print_dlistint - Prints doubly-linked list
- * @h: adress of head node
+ * @h: address of head node
  *
  * Return: size of list
  */
@@ -14,7 +14,7 @@ size_t print_dlistint(const dlistint_t *h)
 	while (h)
 	{
 		printf("%d\n", h->n);
-		h = h->next
+		h = h->next;
 		i++;
 	}
 
