@@ -4,7 +4,7 @@ def is_Palin(mul):
 
 
 def seek_largest_palindrome():
-    return max([i * j for i in range(999, 99, -1) for j in range(999, 99, -1)
+    return max([i * j for i in range(1000, 100) for j in range(1000, 100)
                if is_Palin(i * j)])
 
 
